@@ -1,11 +1,5 @@
-:root {
-  --sm-breakpoint: 600px;
-  --md-breakpoint: 960px;
-  --lg-breakpoint: 1280px;
-  --xl-breakpoint: 1920px;
-
-  --spacing-01: 4px;
-  --spacing-02: 8px;
-  --spacing-03: 16px;
-  --spacing-04: 24px;
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }

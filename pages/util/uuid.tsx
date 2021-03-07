@@ -1,7 +1,7 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import Button from "@material-ui/core/Button";
-import Container from "components/layout/Container";
+import Container from "components/core/Container";
 import UuidCard from "components/uuid/UuidCard";
 
 import styles from "./uuid.module.css";

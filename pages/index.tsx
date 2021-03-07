@@ -16,14 +16,6 @@ export default function Home() {
   return (
     <Container>
       <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <h1>About Me</h1>
-          <Paper className={styles.card}>
-            Allow myself, to introduce... myself. My name is Damien Angelos and I'm a software engineer based in the
-            Boston area. This site serves as a playground for testing out different technologies and is wholly
-            over-engineered for its content.
-          </Paper>
-        </Grid>
         <Grid item xs={6}>
           <Card>
             <CardContent>

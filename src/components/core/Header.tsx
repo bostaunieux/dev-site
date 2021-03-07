@@ -9,7 +9,7 @@ import styles from "./Header.module.css";
 const Header = ({}) => {
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" className={styles.container}>
         <Toolbar>
           <Link href="/" color="inherit" variant="h6">
             dangelos.dev
