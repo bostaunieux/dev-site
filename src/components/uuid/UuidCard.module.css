@@ -1,0 +1,15 @@
+.container {
+  padding: var(--spacing-03);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-03);
+}
+
+.copyButton {
+  flex-grow: 0;
+}
+
+.value {
+  flex-grow: 1;
+  text-align: center;
+}
