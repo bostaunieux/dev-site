@@ -11,13 +11,13 @@ import styles from "./_app.module.css";
 const MyApp = ({ Component, pageProps }: AppProps): React.ReactNode => {
   return (
     <ThemeProvider>
-      <Container maxWidth="md">
-        <div className={styles.container}>
-          <Header />
+      <div className={styles.container}>
+        <Header />
+        <Container maxWidth="md">
           <Component {...pageProps} />
-          <Footer />
-        </div>
-      </Container>
+        </Container>
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 };
