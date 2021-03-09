@@ -10,7 +10,7 @@ const ThemeToggle = (): React.ReactElement => {
 
   return (
     <Tooltip title="Toggle Theme">
-      <IconButton size="small" variant="outlined" color="inherit" onClick={toggleTheme} aria-label="Toggle theme">
+      <IconButton size="small" color="inherit" onClick={toggleTheme} aria-label="Toggle theme">
         {isDark ? <SunIcon /> : <MoonIcon />}
       </IconButton>
     </Tooltip>

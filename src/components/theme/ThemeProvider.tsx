@@ -1,6 +1,5 @@
 import React from "react";
-import { MuiThemeProvider, CssBaseline, useMediaQuery } from "@material-ui/core";
-import { Theme } from "@material-ui/core";
+import { CssBaseline, MuiThemeProvider, Theme, useMediaQuery } from "@material-ui/core";
 import { lightTheme, darkTheme } from "./theme";
 
 interface ThemeProviderProps {
@@ -18,7 +17,7 @@ interface CurrentTheme {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }: ThemeProviderProps) => {
-  // TODO: Does this work
+  // TODO: This needs testing
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   const [selectedTheme, setCurrentTheme] = React.useState<CurrentTheme>({

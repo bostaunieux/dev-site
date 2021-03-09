@@ -1,7 +1,6 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import Button from "@material-ui/core/Button";
-import Container from "components/core/Container";
 import UuidCard from "components/uuid/UuidCard";
 
 import styles from "./uuid.module.css";
@@ -31,17 +30,15 @@ const UUID = ({ uuid }: Props) => {
 
   return (
     <>
-      <Container>
-        <h1>UUID Generator</h1>
+      <h1>UUID Generator</h1>
 
-        <UuidCard uuid={currentUuid} />
+      <UuidCard uuid={currentUuid} />
 
-        <div className={styles.button}>
-          <Button variant="contained" color="primary" onClick={generateUuid}>
-            Generate new UUID
-          </Button>
-        </div>
-      </Container>
+      <div className={styles.button}>
+        <Button variant="contained" color="primary" onClick={generateUuid}>
+          Generate new UUID
+        </Button>
+      </div>
     </>
   );
 };

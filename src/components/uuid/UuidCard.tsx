@@ -1,10 +1,6 @@
 import React from "react";
 
-import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
-import Paper from "@material-ui/core/Paper";
-import Tooltip from "@material-ui/core/Tooltip";
-import Typography from "@material-ui/core/Typography";
+import { Button, Hidden, Paper, Tooltip, Typography } from "@material-ui/core";
 import CopyIcon from "@material-ui/icons/FileCopy";
 
 import styles from "./UuidCard.module.css";
