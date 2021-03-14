@@ -27,17 +27,16 @@ const Decoder = () => {
 
       <TextareaAutosize
         ref={textAreaRef}
+        className={styles.textArea}
         aria-label="Text to encode or decode"
-        rowsMin={4}
+        rowsMin={6}
         placeholder="Enter text to encode or decode"
       />
 
-      <div className={styles.button}>
+      <div className={styles.buttons}>
         <Button variant="contained" color="primary" onClick={encode}>
           Encode
         </Button>
-      </div>
-      <div className={styles.button}>
         <Button variant="contained" color="primary" onClick={decode}>
           Decode
         </Button>
