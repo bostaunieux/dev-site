@@ -22,7 +22,8 @@ export default function Home() {
             </NextLink>
           </CardActions>
         </Card>
-
+      </Grid>
+      <Grid item xs={6}>
         <Card>
           <CardContent>
             <Typography variant="h5" component="h2">
