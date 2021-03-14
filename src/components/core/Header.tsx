@@ -2,7 +2,8 @@ import NextLink from "next/link";
 import { AppBar, Button, Link as MuiLink, Toolbar } from "@material-ui/core";
 import { LinkedIn as LinkedInIcon, GitHub as GitHubIcon } from "@material-ui/icons";
 import ThemeToggle from "components/core/ThemeToggle";
-import routes from "components/core/routes";
+import UtilitiesLinks from "./UtilitiesLinks";
+import routes from "./routes";
 import styles from "./Header.module.css";
 
 const Header = () => {
@@ -16,11 +17,7 @@ const Header = () => {
         </NextLink>
 
         <div className={styles.siteLinks}>
-          <NextLink href={routes.TOOLS_UUID_GEN} passHref>
-            <MuiLink component="a" color="inherit">
-              UUID Generator
-            </MuiLink>
-          </NextLink>
+          <UtilitiesLinks />
         </div>
         <div className={styles.externalLinks}>
           <NextLink href="https://github.com/bostaunieux" passHref>
