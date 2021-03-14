@@ -1,0 +1,12 @@
+.buttons {
+  margin-top: var(--spacing-02);
+}
+
+.buttons :not(:last-child) {
+  margin-right: var(--spacing-02);
+}
+
+.textArea {
+  width: 100%;
+  padding: var(--spacing-02);
+}
