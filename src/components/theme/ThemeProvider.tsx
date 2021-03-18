@@ -6,61 +6,44 @@ interface ThemeProviderProps {
   children: React.ReactNode;
 }
 
+type ThemeName = "light" | "dark";
+
+const themesByName: Map<ThemeName, Theme> = new Map([
+  ["light", lightTheme],
+  ["dark", darkTheme],
+]);
+
 export const ToggleThemeContext = React.createContext({
   toggleTheme: () => {},
   isDark: false,
 });
 
-interface CurrentTheme {
-  themeName: string;
-  muiTheme: Theme;
-}
-
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }: ThemeProviderProps) => {
-  // TODO: This needs testing
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
-  const [selectedTheme, setCurrentTheme] = React.useState<CurrentTheme>({
-    muiTheme: darkTheme,
-    themeName: "dark",
-  });
-  console.log("Prefers dark mode: %s", prefersDarkMode ? "dark" : "light");
+  const [themeName, setThemeName] = React.useState<ThemeName>("dark");
 
   React.useEffect(() => {
-    if (!localStorage.getItem("theme")) {
-      const updatedTheme = prefersDarkMode
-        ? {
-            muiTheme: darkTheme,
-            themeName: "dark",
-          }
-        : {
-            muiTheme: lightTheme,
-            themeName: "light",
-          };
-      setCurrentTheme(updatedTheme);
-    }
-  }, [prefersDarkMode]);
-
-  React.useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme && theme === "light") {
-      setCurrentTheme({ muiTheme: lightTheme, themeName: "light" });
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "light") {
+      setThemeName("light");
     }
   }, []);
 
   const toggleTheme = React.useCallback(() => {
-    if (!selectedTheme || selectedTheme.themeName === "dark") {
-      setCurrentTheme({ muiTheme: lightTheme, themeName: "light" });
+    if (themeName === "dark") {
+      setThemeName("light");
       localStorage.setItem("theme", "light");
     } else {
-      setCurrentTheme({ muiTheme: darkTheme, themeName: "dark" });
+      setThemeName("dark");
       localStorage.setItem("theme", "dark");
     }
-  }, [selectedTheme, setCurrentTheme]);
+  }, [themeName, setThemeName]);
+
+  // TODO: get typescript to understand the map will always return a theme
+  const muiTheme: Theme = themesByName.get(themeName) ?? darkTheme;
 
   return (
-    <ToggleThemeContext.Provider value={{ toggleTheme, isDark: selectedTheme.themeName === "dark" }}>
-      <MuiThemeProvider theme={selectedTheme.muiTheme}>
+    <ToggleThemeContext.Provider value={{ toggleTheme, isDark: themeName === "dark" }}>
+      <MuiThemeProvider theme={muiTheme}>
         <CssBaseline />
         {children}
       </MuiThemeProvider>
