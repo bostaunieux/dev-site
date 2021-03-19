@@ -27,3 +27,8 @@
 .grow {
   flex-grow: 1;
 }
+
+.logo {
+  width: 150px;
+  fill: #fff;
+}
