@@ -2,7 +2,6 @@ import React from "react";
 import NextLink from "next/link";
 import { AppBar, Button, Link as MuiLink, Toolbar } from "@material-ui/core";
 import { LinkedIn as LinkedInIcon, GitHub as GitHubIcon } from "@material-ui/icons";
-import { ToggleThemeContext } from "components/theme/ThemeProvider";
 import SiteLogo from "components/icons/dangelos-dev.svg";
 import ThemeToggle from "components/core/ThemeToggle";
 import UtilitiesLinks from "./UtilitiesLinks";
@@ -10,8 +9,6 @@ import routes from "./routes";
 import styles from "./Header.module.css";
 
 const Header = () => {
-  const { isDark } = React.useContext(ToggleThemeContext);
-
   return (
     <AppBar position="static" className={styles.container}>
       <Toolbar>
