@@ -1,6 +1,8 @@
+import React from "react";
 import NextLink from "next/link";
 import { AppBar, Button, Link as MuiLink, Toolbar } from "@material-ui/core";
 import { LinkedIn as LinkedInIcon, GitHub as GitHubIcon } from "@material-ui/icons";
+import SiteLogo from "components/icons/dangelos-dev.svg";
 import ThemeToggle from "components/core/ThemeToggle";
 import UtilitiesLinks from "./UtilitiesLinks";
 import routes from "./routes";
@@ -12,7 +14,7 @@ const Header = () => {
       <Toolbar>
         <NextLink href={routes.HOME} passHref>
           <Button component="a" color="inherit">
-            dangelos.dev
+            <SiteLogo className={styles.logo} />
           </Button>
         </NextLink>
 

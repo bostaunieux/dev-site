@@ -9,12 +9,10 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,700&display=swap"
           />
-          {/* <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" /> */}
         </Head>
         <body>
           <Main />
@@ -24,7 +22,7 @@ export default class MyDocument extends Document {
     );
   }
 }
-
+// see https://github.com/mui-org/material-ui/blob/f285808fbf8728b0cc0435e65a76dbc691be3643/examples/nextjs/pages/_document.js
 MyDocument.getInitialProps = async (ctx) => {
   const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;

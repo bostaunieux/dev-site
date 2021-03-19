@@ -24,6 +24,7 @@
   margin-right: var(--spacing-03);
 }
 
-.grow {
-  flex-grow: 1;
+.logo {
+  width: 150px;
+  fill: #fff;
 }

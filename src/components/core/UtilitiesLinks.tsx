@@ -16,7 +16,7 @@ const UtilitiesLinks = () => {
 
   return (
     <>
-      <Button aria-controls="utility-links-menu" aria-haspopup="true" onClick={openMenu}>
+      <Button aria-controls="utility-links-menu" aria-haspopup="true" color="inherit" onClick={openMenu}>
         Utilities
       </Button>
       <Menu
