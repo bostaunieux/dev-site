@@ -6,7 +6,7 @@ import routes from "components/core/routes";
 export default function Home() {
   return (
     <Grid container spacing={3}>
-      <Grid item xs={6}>
+      <Grid item sm={6} xs={12}>
         <Card>
           <CardContent>
             <Typography variant="h5" component="h2">
@@ -23,7 +23,7 @@ export default function Home() {
           </CardActions>
         </Card>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item sm={6} xs={12}>
         <Card>
           <CardContent>
             <Typography variant="h5" component="h2">
